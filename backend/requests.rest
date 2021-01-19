@@ -1,0 +1,21 @@
+GET http://localhost:5000/api/places/p1
+
+###
+
+GET http://localhost:5000/api/places/user/u2
+
+###
+
+POST http://localhost:5000/api/places
+Content-Type: application/json
+
+{
+    "title": "New York Stock Exchange",
+    "description": "Where the money lives.",
+    "creator": "u3",
+    "address": "11 Wall St, New York, NY 10005",
+    "coordinates": {
+      "lat": 40.7063069,
+      "lng": -74.010329
+    }
+}
