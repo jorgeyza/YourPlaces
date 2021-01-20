@@ -1,12 +1,12 @@
 // getPlaceById
 
-GET http://localhost:5000/api/places/60077a8895aad05178ebda8c
+GET http://localhost:5000/api/places/60088aa369b7321f38db7e4b
 
 ###
 
 //getPlacesByUserId
 
-GET http://localhost:5000/api/places/user/u2
+GET http://localhost:5000/api/places/user/600888e53b027231bc7f255d
 
 ###
 
@@ -19,14 +19,14 @@ Content-Type: application/json
     "title": "Empire State Building",
     "description": "A very famous building in NY",
     "address": "20 W 34th St, New York, NY 10001",
-    "creator": "u2"
+    "creator": "600888e53b027231bc7f255d"
 }
 
 ###
 
 // updatePlace
 
-PATCH http://localhost:5000/api/places/60077a8895aad05178ebda8c
+PATCH http://localhost:5000/api/places/60088aa369b7321f38db7e4b
 Content-Type: application/json
 
 {
@@ -38,4 +38,4 @@ Content-Type: application/json
 
 // deletePlace
 
-DELETE http://localhost:5000/api/places/60077a8895aad05178ebda8c
+DELETE http://localhost:5000/api/places/60088aa369b7321f38db7e4b
