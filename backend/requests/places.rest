@@ -26,16 +26,16 @@ Content-Type: application/json
 
 // updatePlace
 
-PATCH http://localhost:5000/api/places/p1
+PATCH http://localhost:5000/api/places/60077a8895aad05178ebda8c
 Content-Type: application/json
 
 {
-  "title": "Empire State of Mind",
-  "description": "A pretty great song!"
+  "title": "The Empire State Building",
+  "description": "A great building"
 }
 
 ###
 
 // deletePlace
 
-DELETE http://localhost:5000/api/places/p1
+DELETE http://localhost:5000/api/places/60077a8895aad05178ebda8c
