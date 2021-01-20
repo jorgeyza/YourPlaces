@@ -1,10 +1,16 @@
-GET http://localhost:5000/api/places/p1
+// getPlaceById
+
+GET http://localhost:5000/api/places/60077a8895aad05178ebda8c
 
 ###
+
+//getPlacesByUserId
 
 GET http://localhost:5000/api/places/user/u2
 
 ###
+
+// createPlace
 
 POST http://localhost:5000/api/places
 Content-Type: application/json
@@ -18,6 +24,8 @@ Content-Type: application/json
 
 ###
 
+// updatePlace
+
 PATCH http://localhost:5000/api/places/p1
 Content-Type: application/json
 
@@ -27,5 +35,7 @@ Content-Type: application/json
 }
 
 ###
+
+// deletePlace
 
 DELETE http://localhost:5000/api/places/p1

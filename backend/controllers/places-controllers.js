@@ -29,16 +29,28 @@ let DUMMY_PLACES = [
   },
 ];
 
-const getPlaceById = (req, res, next) => {
+const getPlaceById = async (req, res, next) => {
   const placeId = req.params.pid;
-  const place = DUMMY_PLACES.find((p) => {
-    return p.id === placeId;
-  });
+
+  let place;
+  try {
+    place = await Place.findById(placeId); //Does not return promise, unless you attach '.exec()'
+  } catch (err) {
+    const error = new HttpError(
+      'Something went wrong, could not find a place.',
+      500
+    );
+    return next(error);
+  }
 
   if (!place) {
-    throw new HttpError('Could not find a place for the provided id.', 404); //throwing the error works only for synchronous actions. This will be changed to "next"
+    const error = new HttpError(
+      'Could not find a place for the provided id.',
+      404
+    ); //throwing the error works only for synchronous actions. This will be changed to "next"
+    return next(error);
   }
-  res.json({ place });
+  res.json({ place: place.toObject({ getters: true }) }); // .toObject converts to a normal js object and getters:true adds an 'id' property (which is lost when using .toObject -> deleted '_id' property)
 };
 
 const getPlacesByUserId = (req, res, next) => {
