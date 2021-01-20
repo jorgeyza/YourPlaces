@@ -30,7 +30,7 @@ app.use((error, req, res, next) => {
 
 const { MONGODB_USER, MONGODB_PASSWORD } = process.env;
 
-const uri = `mongodb+srv://${MONGODB_USER}:${MONGODB_PASSWORD}@cluster0.6bw1j.mongodb.net/places?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${MONGODB_USER}:${MONGODB_PASSWORD}@cluster0.6bw1j.mongodb.net/YourPlaces?retryWrites=true&w=majority`;
 
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })

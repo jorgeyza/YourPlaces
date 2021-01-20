@@ -10,10 +10,10 @@ POST http://localhost:5000/api/places
 Content-Type: application/json
 
 {
-    "title": "New York Stock Exchange",
-    "description": "Where the money lives.",
-    "creator": "u3",
-    "address": "11 Wall St, New York, NY 10005"
+    "title": "Empire State Building",
+    "description": "A very famous building in NY",
+    "address": "20 W 34th St, New York, NY 10001",
+    "creator": "u2"
 }
 
 ###
