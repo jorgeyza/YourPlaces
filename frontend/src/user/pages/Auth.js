@@ -83,17 +83,23 @@ const Auth = () => {
       } catch (err) {}
     } else {
       try {
+        const formData = new FormData(); // FormData is a browser API for handling data, included binary data (files)
+        formData.append('name', formState.inputs.name.value);
+        formData.append('email', formState.inputs.email.value);
+        formData.append('password', formState.inputs.password.value);
+        formData.append('image', formState.inputs.image.value);
         const responseData = await sendRequest(
           'http://localhost:5000/api/users/signup',
           'POST',
-          JSON.stringify({
-            name: formState.inputs.name.value,
-            email: formState.inputs.email.value,
-            password: formState.inputs.password.value,
-          }),
-          {
-            'Content-Type': 'application/json',
-          }
+          // JSON.stringify({
+          //   name: formState.inputs.name.value,
+          //   email: formState.inputs.email.value,
+          //   password: formState.inputs.password.value,
+          // }),
+          formData // No need to attach headers when using FormData
+          // {
+          //   'Content-Type': 'application/json',
+          // }
         );
         auth.login(responseData.user.id);
       } catch (err) {}
