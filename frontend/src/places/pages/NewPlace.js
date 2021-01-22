@@ -54,7 +54,10 @@ const NewPlace = () => {
       await sendRequest(
         'http://localhost:5000/api/places',
         'POST',
-        formData
+        formData,
+        {
+          Authorization: 'Bearer ' + auth.token,
+        }
         // JSON.stringify({
         //   title: formState.inputs.title.value,
         //   description: formState.inputs.description.value,
